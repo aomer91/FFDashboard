@@ -80,6 +80,31 @@ st.markdown("""
         padding-left: 2rem !important;
         padding-right: 2rem !important;
     }
+
+    /* Make table layout auto and responsive */
+.stTable table {
+    table-layout: auto !important;
+    width: 100% !important;
+}
+
+/* Adjust column text to wrap neatly */
+.stTable td {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+}
+
+/* Reduce font size on very small screens for readability */
+@media (max-width: 768px) {
+    .stTable table {
+        font-size: 14px !important;
+    }
+}
+
+/* Optional: Ensure columns never become narrower than 80px */
+.stTable td, .stTable th {
+    min-width: 80px !important;
+}
+
     </style>
 """, unsafe_allow_html=True)
 
