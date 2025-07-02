@@ -4,4 +4,4 @@ matplotlib==3.10.3
 requests==2.32.4
 sleeper-api-wrapper==1.1.0
 adjustText==1.3.0
-numpy==2.3.0
+numpy==1.26.4
