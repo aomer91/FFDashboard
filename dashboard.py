@@ -23,65 +23,69 @@ st.set_page_config(layout="wide", page_title="Fantasy League Dashboard")
 
 # ----------- STYLING ------------------------
 # Custom CSS for Poppins, titles, table color/padding
+import streamlit as st
+
 st.markdown("""
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-    html, body, .stApp {
-        font-family: 'Poppins', Arial, sans-serif !important;
-        background-color: #001f3f !important;
-    }
+html, body, .stApp {
+    font-family: 'Poppins', Arial, sans-serif !important;
+    background-color: #001f3f !important;
+}
 
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Poppins', Arial, sans-serif !important;
-        color: white !important;
-    }
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', Arial, sans-serif !important;
+    color: white !important;
+}
 
-    /* Table titles */
-    .stMarkdown > h1, .stMarkdown > h2, .stMarkdown > h3 {
-        font-size: 18px !important;
-        font-weight: 600 !important;
-        color: white !important;
-        margin-bottom: 12px !important;
-    }
+/* Table titles */
+.stMarkdown > h1, .stMarkdown > h2, .stMarkdown > h3 {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    color: white !important;
+    margin-bottom: 12px !important;
+}
 
-    /* DataFrame table styling */
-    .stDataFrame, .stTable {
-        background-color: #10213C !important;
-        border-radius: 12px !important;
-        padding: 12px !important;
-        font-size: 16px !important;
-        color: white !important;
-        font-family: 'Poppins', Arial, sans-serif !important;
-    }
-    /* Table header */
-    thead tr th {
-        background-color: #10213C !important;
-        color: white !important;
-        font-weight: 600 !important;
-        font-size: 16px !important;
-        padding: 10px 6px !important;
-    }
-    /* Table rows */
-    tbody tr td {
-        background-color: #10213C !important;
-        color: white !important;
-        padding: 8px 6px !important;
-        border-bottom: 1px solid #29365B !important;
-    }
+/* DataFrame table styling */
+.stDataFrame, .stTable {
+    background-color: #10213C !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+    font-size: 16px !important;
+    color: white !important;
+    font-family: 'Poppins', Arial, sans-serif !important;
+}
 
-    /* Remove annoying Streamlit line under tables */
-    .stDataFrame > div {
-        border: none !important;
-    }
+/* Table header */
+thead tr th {
+    background-color: #10213C !important;
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    padding: 10px 6px !important;
+}
 
-    /* Remove left gap/padding for better stretch */
-    .block-container {
-        padding-left: 2rem !important;
-        padding-right: 2rem !important;
-    }
+/* Table rows */
+tbody tr td {
+    background-color: #10213C !important;
+    color: white !important;
+    padding: 8px 6px !important;
+    border-bottom: 1px solid #29365B !important;
+}
 
-    /* Make table layout auto and responsive */
+/* Remove Streamlit line under tables */
+.stDataFrame > div {
+    border: none !important;
+}
+
+/* Remove left gap/padding for better stretch */
+.block-container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+}
+
+/* Make table layout auto and responsive */
 .stTable table {
     table-layout: auto !important;
     width: 100% !important;
@@ -100,14 +104,12 @@ st.markdown("""
     }
 }
 
-/* Optional: Ensure columns never become narrower than 80px */
+/* Ensure columns never become narrower than 80px */
 .stTable td, .stTable th {
     min-width: 80px !important;
 }
-
-    </style>
+</style>
 """, unsafe_allow_html=True)
-
 
 # ----------- HELPERS (no lambdas in cache) ------------
 def reg_stat_template():
